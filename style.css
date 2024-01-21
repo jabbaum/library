@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Open+Sans:wght@300;500&display=swap');
+
+/* CSS Reset */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+/* Global Settings */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2rem; 
+}
+h3 {
+    font-size: 1.8rem;
+}
+p {
+    font-size: 1.2rem;
+}
+img {
+    width: 25px;
+}
+
+
+/* Panel Grid Settings */
+
+.panel {
+    display: grid;
+    grid-template: auto auto auto / 1fr 4fr;
+}
+.left {
+    grid-area: 1 / 1 / 4 / 1;
+    background-color: #3769cd;
+    color: #fff;
+}
+.main {
+    grid-area: 1 / 2 / 4 / 3;
+    display: grid;
+    grid-template: auto auto audo / 1fr;
+}
+
+/* Left Panel Settings */
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 25px;
+}
+.leftMenu {
+    display: grid;
+    gap: 9px;
+}
+.menuItem {
+    display: flex;
+    gap: 11px;
+    flex-wrap: wrap;
+}
+.menuItem > p {
+    width: 100%;
+}
+.leftTitle > img {
+    width: 40px;
+}
+.leftMenu > button.nav {
+    background-color: #e7e1e1;
+    color: #3769cd;
+    margin-top: 1.5rem;
+}
+
+/* Header Settings */
+.header {
+    display: grid;
+    grid-template: auto auto / 1fr auto;
+    row-gap: 25px;
+    column-gap: 5rem;
+    padding: 25px;
+}
+
+button.nav {
+    padding: 5px 25px;
+    background-color: #3769cd;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+}
+input {
+    border: none;
+    background-color: #e7e1e1;
+    border-radius: 25px;
+}
+.search > input {
+    flex-grow: 1;
+}
+.search, .accountActions, .greeting, .headNav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.search, .greeting {
+    gap: 7px;
+}
+.accountActions, .headNav {
+    justify-content: end;
+}
+.greeting img {
+    width: 50px;
+}
+.greeting p {
+    margin-bottom: -0.3rem;
+}
+
+/* content settings */
+.content {
+    background-color: #e7e1e1;
+    display: grid;
+    padding: 25px;
+    grid-template: auto / 3fr;
+    gap: 25px;
+}
+.cardHolder {
+    display: grid;
+    grid-template: repeat(4, min-content) / 1fr 1fr 1fr;
+    gap: 25px;
+}
+.cardHolder > h4 {
+    grid-area: 
+    1 / 1 /
+    2 / 4;
+}
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    border-left: 7px solid #3769cd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+}
+.cardActions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 7px;
+}
+
+.sideHolder {
+    display: grid;
+    grid-template-rows: min-content auto;
+    /* grid-auto-flow: ; */
+    gap: 50px;
+}
+.sideWidget {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 3rem 2.5rem;
+    display: grid;
+    grid-template: min-content / 1fr;
+    gap: 1rem;
+}
+.annoucementItem:not(:last-child) {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #000;
+}
+.userContainer img {
+    width: 45px;
+}
+.sideWidgetContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.userContainer {
+    display: grid;
+    grid-template: 1fr / max-content 1fr;
+    gap: 17px;
+}
+
+
+
+/* footer settings */
+.footer {
+    text-align: center;
+}
