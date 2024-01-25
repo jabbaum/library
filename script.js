@@ -53,6 +53,9 @@ function populateCards() {
     
         let card = document.createElement('div');
         card.className = 'card';
+
+        let buttonHolder = document.createElement('div');
+        buttonHolder.className = 'buttonHolder';
     
     
         let cardText = document.createElement('div');
@@ -71,13 +74,19 @@ function populateCards() {
         remove.textContent = '-';
         remove.id = unique.toString();
         remove.addEventListener('click', removeBookFromLibrary);
+        let readChange = document.createElement('button');
+        readChange.textContent = 'I Read It!';
+        readChange.id = unique.toString();
+        readChange.addEventListener('click', updateRead);
     
         card.appendChild(bookTitle);
         card.appendChild(bookAuth);
         card.appendChild(bookPageNums);
         card.appendChild(bookGenre);
         card.appendChild(bookReadYet);
-        card.appendChild(remove);
+        buttonHolder.appendChild(remove);
+        buttonHolder.appendChild(readChange);
+        card.appendChild(buttonHolder);
         cardHolder.appendChild(card);
     });
 }
@@ -87,6 +96,20 @@ function removeBookFromLibrary(e) {
     let indexUID = Library.map(e => e.unique).indexOf(Number(uniqueID));
     if (indexUID>=0) {
         Library.splice(indexUID, 1);
+    }
+    populateCards();
+}
+
+function updateRead(e) {
+    let uniqueID = e.currentTarget.id;
+    let indexUID = Library.map(e => e.unique).indexOf(Number(uniqueID));
+    if(indexUID >=0) {
+        let item = Library[indexUID];
+        if (item.readYet.toLowerCase() === 'not yet') {
+            item.readYet = '';
+        } else {
+            item.readYet = 'not yet';
+        }
     }
     populateCards();
 }
