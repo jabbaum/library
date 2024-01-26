@@ -19,15 +19,17 @@ function book(title, author, numPages, genre, readYet) {
 
 function addBookToLibrary(e) {
     e.preventDefault();
-    let newTitle = titleField.value;
-    let newAuthor = authField.value;
-    let newNumPages = numPagesField.value;
-    let newGenre = genreField.value;
-    let newReadYet = readYetField.value;
-    let newBook = new book(newTitle, newAuthor, newNumPages, newGenre, newReadYet);
-    Library.push(newBook);
-    clearBookInput();
-    populateCards();
+    if(titleField.value != '' && authField.value != '' && numPagesField.value != ''){
+        let newTitle = titleField.value;
+        let newAuthor = authField.value;
+        let newNumPages = numPagesField.value;
+        let newGenre = genreField.value;
+        let newReadYet = readYetField.value;
+        let newBook = new book(newTitle, newAuthor, newNumPages, newGenre, newReadYet);
+        Library.push(newBook);
+        clearBookInput();
+        populateCards();
+    }
 }
 
 function clearBookInput() {
