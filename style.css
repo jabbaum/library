@@ -195,7 +195,13 @@ input {
     justify-content: end;
     gap: 7px;
 }
-
+.cardActions button {
+    border-radius: 25px;
+    padding: 4px 25px;
+    border: none;
+    background-color: #3769cd;
+    color: #fff;
+}
 .sideHolder {
     display: grid;
     grid-template-rows: min-content auto;

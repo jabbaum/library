@@ -55,7 +55,7 @@ function populateCards() {
         card.className = 'card';
 
         let buttonHolder = document.createElement('div');
-        buttonHolder.className = 'buttonHolder';
+        buttonHolder.className = 'cardActions';
     
     
         let cardText = document.createElement('div');
