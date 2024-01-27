@@ -24,7 +24,13 @@ function addBookToLibrary(e) {
         let newAuthor = authField.value;
         let newNumPages = numPagesField.value;
         let newGenre = genreField.value;
-        let newReadYet = readYetField.value;
+        let newReadYet;
+        if(readYetField.checked == false) {
+            newReadYet = 'not yet';
+        } else if(readYetField.checked == true) {
+            newReadYet = '';
+        }
+        
         let newBook = new book(newTitle, newAuthor, newNumPages, newGenre, newReadYet);
         Library.push(newBook);
         clearBookInput();
@@ -38,6 +44,7 @@ function clearBookInput() {
     numPagesField.value = '';
     genreField.value = '';
     readYetField.value = '';
+    readYetField.checked = false;
 }
 
 function populateCards() {
