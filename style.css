@@ -236,6 +236,9 @@ input {
     justify-content: space-between;
     gap: 12px;
 }
+.card h5 {
+    font-size: 1.4rem;
+}
 .cardActions {
     display: flex;
     flex-direction: row;

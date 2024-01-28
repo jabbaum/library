@@ -76,7 +76,7 @@ function populateCards() {
         let bookPageNums = document.createElement('p');
         bookPageNums.textContent = pageNumText;
         let bookGenre = document.createElement('p');
-        bookPageNums.textContent = genreText;
+        bookGenre.textContent = genreText;
         let bookReadYet = document.createElement('p');
         bookReadYet.textContent = readYetText;
         let remove = document.createElement('button');
@@ -124,9 +124,9 @@ function updateRead(e) {
 }
 
 // initial set up for the Library
-const hobbit = new book('Hobbit', 'Tokein', 400, 'Fantasy', 'Not Yet');
-const thrawn = new book('Thrawn', "Zahn", 400, 'Sci-Fi','Not Yet');
-const rising = new book('Rising', 'Zahn', 400, 'Sci-Fi', 'Not Yet');
+const hobbit = new book('Hobbit', 'Tokein', 400, 'Fantasy', 'not yet');
+const thrawn = new book('Thrawn', "Zahn", 400, 'Sci-Fi','not yet');
+const rising = new book('Rising', 'Zahn', 400, 'Sci-Fi', 'not yet');
 Library.push(hobbit);
 Library.push(thrawn);
 Library.push(rising);
